@@ -19,11 +19,21 @@
     
   </div>
   <div class="row gy-1 my-5" *ngFor="let user of users$; let i = index" style="min-height: 134px;">
-    <div class="col-lg-2 bg bg-light border border-3 border-dark d-flex justify-content-center align-items-center">
-      Name: {{ user.name }}
+    <div class="col-lg-2 border border-3 border-dark d-flex justify-content-center align-items-center" style="background-color: rgb(20, 220, 80);">
+      <h3 class="text-center" style="color: yellow;">
+        Name: 
+        <div class="text-white">
+          {{ user.name }}
+        </div> 
+      </h3>
     </div>
-    <div class="col-lg-2 bg bg-light border border-3 border-dark d-flex justify-content-center align-items-center">
-      Age: {{ user.age }}
+    <div class="col-lg-2 border border-3 border-dark d-flex justify-content-center align-items-center" style="background-color: rgb(53, 72, 238);">
+      <h3 class="text-center text-white">
+        Age: 
+        <div class="mt-1" style="color: yellow;">
+          {{ user.age }}
+        </div> 
+      </h3>
     </div>
     <div class="col-lg-4 d-flex flex-column justify-content-center align-items-center">
       <button class="btn btn-info text-white px-5 border border-3 border-dark mb-3" style="min-width: 200px;" (click)="togglePanel[i] = !togglePanel[i]">
