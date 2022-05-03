@@ -1,15 +1,18 @@
 {
   "users": [
     {
-      "name": "Someone's name",
+      "name": "blablabla",
+      "age": "12",
       "id": 6
     },
     {
       "name": "Jack Kerouac",
+      "age": "47",
       "id": 8
     },
     {
-      "name": "Michele Ierniero",
+      "name": "Neal Cassady",
+      "age": "43",
       "id": 10
     }
   ]
