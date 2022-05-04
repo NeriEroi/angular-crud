@@ -1,16 +1,20 @@
 <div class="container" style="min-height: 100vh;">
-  <div class="row">
-    <div class="col-12 bg bg-primary d-flex justify-content-center align-items-center" style="min-height: 60px;">
-      <h3 class="text-white mb-0">
+  <div id="row_bg" class="row">
+    <div class="col-12 d-flex justify-content-center align-items-center p-3" style="min-height: 60px;">
+      <span class="border border-dark border-3 text-white fs-1 px-5 py-3 mb-0" style="background-color: #2E3DA4;">
          Users' Json:
-      </h3>
+      </span>
     </div>
-    <div class="col-12 d-flex justify-content-center bg bg-primary" >
+    <div class="col-12 d-flex justify-content-center" >
       <form #usersForm="ngForm" class="d-flex flex-column py-3" (ngSubmit)="addUser(usersForm.value)">
-        <label for="name" class="text-white">Name</label>
-        <input id="name" type="text" [(ngModel)]="userName.name" name="name" placeholder="Add user's name">
-        <label for="age" class="text-white mt-2">Age</label>
-        <input id="age" type="text" [(ngModel)]="userName.age" name="age" placeholder="Add user's age" class="mt-1">
+        <label for="name" class="text-center text-white border border-dark border-3 fs-3 p-3 mb-1" style="background-color: #2E3DA4;">
+          Name
+        </label>
+        <input id="name" class="p-2 mb-1" type="text" [(ngModel)]="userName.name" name="name" placeholder="Add user's name">
+        <label for="age" class=" text-center text-white border border-dark border-3 fs-3 p-3 mt-2" style="background-color: #2E3DA4;">
+          Age
+        </label>
+        <input id="age" type="text" [(ngModel)]="userName.age" name="age" placeholder="Add user's age" class="p-2 mt-1">
         <button class="btn text-white border border-3 border-dark mt-3" style="min-width: 200px; background-color: lime;">
           POST
         </button>
@@ -19,7 +23,7 @@
     
   </div>
   <div class="row gy-1 my-5" *ngFor="let user of users$; let i = index" style="min-height: 134px;">
-    <div class="col-lg-2 border border-3 border-dark d-flex justify-content-center align-items-center" style="background-color: rgb(20, 220, 80);">
+    <div class="col-lg-2 d-flex justify-content-center align-items-center" style="background-color: rgb(220, 20, 20);">
       <h3 class="text-center" style="color: yellow;">
         Name: 
         <div class="text-white">
@@ -27,7 +31,7 @@
         </div> 
       </h3>
     </div>
-    <div class="col-lg-2 border border-3 border-dark d-flex justify-content-center align-items-center" style="background-color: rgb(53, 72, 238);">
+    <div class="col-lg-2 d-flex justify-content-center align-items-center" style="background-color: rgb(53, 72, 238);">
       <h3 class="text-center text-white">
         Age: 
         <div class="mt-1" style="color: yellow;">
@@ -36,32 +40,33 @@
       </h3>
     </div>
     <div class="col-lg-4 d-flex flex-column justify-content-center align-items-center">
-      <button class="btn btn-info text-white px-5 border border-3 border-dark mb-3" style="min-width: 200px;" (click)="togglePanel[i] = !togglePanel[i]">
+      <button class="btn btn-info text-white px-5 border border-3 border-dark mb-3 mt-2" style="min-width: 200px;" (click)="togglePanel[i] = !togglePanel[i]">
         PUT
       </button>
-      <div class="d-flex flex-column" *ngIf="togglePanel[i]">
+      <div class="d-flex flex-column border border-3 border-info p-4" *ngIf="togglePanel[i]">
         <div>
-          <input type="text" [(ngModel)]="userUpdate.name" name="name" placeholder="Update user's name" class="py-2" style="margin-right: 5px;">
+          <input type="text" [(ngModel)]="userUpdate.name" name="name" placeholder="Update user's name" class="align-middle py-2 my-3" style="margin-right: 5px;">
           <button class="btn text-white border border-3 border-dark p-1" (click)="patchName(user.id)" style="background-color: orangered;">
             Patch user's name
           </button>
         </div>
         <div>
-          <input type="text" [(ngModel)]="userUpdate.age" name="age" placeholder="Update user's age" class="py-2 my-3" style="margin-right: 5px;">
+          <input type="text" [(ngModel)]="userUpdate.age" name="age" placeholder="Update user's age" class="align-middle py-2 my-3" style="margin-right: 5px;">
           <button class="btn text-white border border-3 border-dark px-2 py-1" (click)="patchAge(user.id)" style="background-color: orangered;">
             Patch user's age
           </button>
         </div>
-        <button class="btn btn-warning text-white border border-3 border-dark py-0" (click)="updateUsers(user.id)">
+        <button class="btn btn-warning text-white border border-3 border-dark py-0 my-3" (click)="updateUsers(user.id)">
           EDIT
         </button>
       </div>
 
     </div>
-    <div class="col-lg-4 d-flex justify-content-center align-items-center">
+    <div class="col-lg-3 d-flex justify-content-center align-items-center my-3">
       <button class="btn btn-danger text-white px-5 border border-3 border-dark" style="min-width: 200px;" (click)="removeUser(user.id)">
         DELETE
       </button>
     </div>
+    
   </div>
 </div>
