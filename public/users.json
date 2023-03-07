@@ -1,19 +1,9 @@
 {
   "users": [
     {
-      "name": "William Burroghs",
-      "age": "99",
-      "id": 6
-    },
-    {
       "name": "Jack Kerouac",
       "age": "47",
-      "id": 8
-    },
-    {
-      "name": "Neal Cassady",
-      "age": "43",
-      "id": 10
+      "id": 1
     }
   ]
 }
